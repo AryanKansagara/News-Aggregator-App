@@ -13,17 +13,29 @@ let page = 1;
 let currentQuery = "latest";
 
 
-async function fetchNews(query, pageNum=1) {
-    const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${api_key}`;
-    const res = await fetch(url);
-    if (!res.ok) {
-        console.error("Error fetching news:", res.status, res.statusText);
-        return;
-    }
-    const data = await res.json();
-    console.log(data); // check if data.articles exists
+// async function fetchNews(query, pageNum=1) {
+//     const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${api_key}`;
+//     const res = await fetch(url);
+//     if (!res.ok) {
+//         console.error("Error fetching news:", res.status, res.statusText);
+//         return;
+//     }
+//     const data = await res.json();
+//     console.log(data); // check if data.articles exists
+//     displayNews(data.articles);
+// }
+
+async function fetchNews(query, pageNum = 1, category = "") {
+  const res = await fetch(`/api/news?q=${query}&page=${pageNum}&category=${category}`);
+  const data = await res.json();
+
+  if (data.articles) {
     displayNews(data.articles);
+  } else {
+    console.error("Error fetching news:", data);
+  }
 }
+
 
 
 function displayNews(articles){
