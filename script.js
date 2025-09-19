@@ -1,4 +1,4 @@
-const api_key = "3c018fba198144399a63e0c46d5be311";
+const api_key = "YOUR_API_KEY";
 
 const container = document.getElementById("news-container");
 const searchBtn = document.getElementById("searchBtn");
