@@ -9,8 +9,7 @@ It allows users to search for news, browse by categories, and load more results 
 -  **Search News** by keyword (press Enter or click search button)  
 -  **Browse by Category** (Technology, Sports, Health, Business)  
 -  **Load More** button to paginate results  
--  **Responsive Article Cards** with images, titles, descriptions, and links  
--  Optional: Easy to extend with Dark/Light mode  
+-  **Responsive Article Cards** with images, titles, descriptions, and links    
 
 ---
 
